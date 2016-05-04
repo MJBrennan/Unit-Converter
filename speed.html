@@ -1,0 +1,219 @@
+<<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="#">
+
+    <title>Unit Converter</title>
+
+   
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+   
+    <link href="navbar.css" rel="stylesheet">
+
+   
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+  
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Unit Converter</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="index.html">Currency </a></li>
+              <li><a href="temp.html">Temperture </a></li>
+              <li class="active" ><a href="speed.html">Speed </a></li>
+			  <li><a href="volume.html">Volume </a></li>
+           
+            </ul>
+          
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+
+     
+	   
+	   
+      <div class="jumbotron ">
+	  <div> 
+	  <table> 
+<tr> 
+
+       <td>  
+	  <img src="img/euro.jpg" class="img-rounded" alt="Euro" width="200" height="100"> 
+	  </td>
+	  <td>
+	  <img src="img/american.jpeg" class="img-rounded" alt="American" width="200" height="100">          
+	  </td>
+	  </tr>
+	  </table> 
+	  
+	  
+	  <div class="container">
+  <h2>Speed Converter</h2>
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">MPH to KPH</a></li>
+  <li><a data-toggle="tab" href="#next">KPH to MPH</a></li>
+ 
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+    
+     <h5>Please Enter MPH Unit:</h5> 
+	 
+	 <form class="form-inline">
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputAmount">Speed</label>
+    <div class="input-group">
+      <div class="input-group-addon">MPH</div>
+      <input type="text" class="form-control" id="zipcode2"  >
+    </div>
+  </div>
+  <input type="button" class="btn btn-primary" value="Search" onclick="mphTo();" />
+ 
+  <div class="input-group">
+    <div class="input-group-addon">KPH</div>
+      <input type="text" class="form-control" id="conditiontext"  disabled >
+	  </div>
+	  </form> 
+    <p>
+	</p>
+	
+    </div>
+	
+	
+ <div id="next" class="tab-pane fade">
+  
+   <h5>Please Enter :</h5>
+    <form class="form-inline">
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputAmount">Speed</label>
+    <div class="input-group">
+      <div class="input-group-addon">KPH</div>
+      <input type="text" class="form-control" id="celtext"  >
+    </div>
+  </div>
+  <input type="button" class="btn btn-primary" value="Search" onclick="kphTo();" />
+ 
+  <div class="input-group">
+    <div class="input-group-addon">MPH</div>
+      <input type="text" class="form-control" id="fartext"  disabled >
+	  </div>
+	  </form> 
+	  <p>
+	</p>
+	
+    </div>
+  
+ 
+
+    </div>
+  
+    </div>
+	
+   
+  
+  </div>
+
+ </div>
+	
+  </div>
+</div>
+
+	
+	
+	
+	<!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+	
+	
+<script type="text/javascript">
+		
+
+function mphTo() {
+				$.getJSON(
+					"http://api.fixer.io/latest?symbols=USD,EUR",
+					{format:'json'},
+					function(data) {
+					
+					    var amount = $("#zipcode2").val();
+					
+						
+					    var	dollar2 = Number(amount) * Number(1.609344);
+						
+						
+						
+						
+						
+						
+						$("#conditiontext").val(dollar2);
+					})
+				.fail(
+					function (jqXHR, textStatus, err) {
+						$("#title").val(textStatus);
+					});
+			}
+			
+			function kphTo() {
+				$.getJSON(
+					"http://api.fixer.io/latest?symbols=USD,EUR",
+					{format:'json'},
+					function(data) {
+					
+					    var amount = $("#celtext").val();
+						
+						
+				 var	dollar2 = Number(amount) / Number(1.609344);
+						
+						$("#fartext").val(dollar2);
+					})
+	
+			}
+			
+			
+			
+			
+</script>
+	
+	
+	
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+   
+ 
+  </body>
+</html>
+
+
+
+</html>

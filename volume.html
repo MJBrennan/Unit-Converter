@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="#">
+
+    <title>Unit Converter</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+  
+    <link href="navbar.css" rel="stylesheet">
+
+   
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+ 
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Unit Converter</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="index.html">Currency </a></li>
+              <li ><a href="temp.html">Temperture </a></li>
+              <li><a href="speed.html">Speed </a></li>
+			  <li class="active"><a href="volume.html">Volume </a></li>
+           
+            </ul>
+          
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+
+      <!-- Main component for a primary marketing message or call to action -->
+	   
+	   
+      <div class="jumbotron ">
+	  <div> 
+	  <table> 
+<tr> 
+
+       <td>  
+	  <img src="img/euro.jpg" class="img-rounded" alt="Euro" width="200" height="100"> 
+	  </td>
+	  <td>
+	  <img src="img/american.jpeg" class="img-rounded" alt="American" width="200" height="100">          
+	  </td>
+	  </tr>
+	  </table> 
+	  
+	  
+	  <div class="container">
+  <h2>Volume Converter</h2>
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">G to L</a></li>
+  <li><a data-toggle="tab" href="#next">L to G</a></li>
+ 
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+    
+     <h5>Please Enter Gallon Amount:</h5> 
+	 
+	 <form class="form-inline">
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputAmount">Temperture</label>
+    <div class="input-group">
+      <div class="input-group-addon">G</div>
+      <input type="text" class="form-control" id="littext2" placeholder="Amount" >
+    </div>
+  </div>
+  <input type="button" class="btn btn-primary" value="Search" onclick="litreTo();" />
+ 
+  <div class="input-group">
+    <div class="input-group-addon">L</div>
+      <input type="text" class="form-control" id="galtext2" placeholder="Converted Cash" disabled >
+	  </div>
+	  </form> 
+    <p>
+	</p>
+	
+    </div>
+	
+	
+ <div id="next" class="tab-pane fade">
+  
+   <h5>Please Enter Litre Amount:</h5>
+    <form class="form-inline">
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputAmount">Temperture</label>
+    <div class="input-group">
+      <div class="input-group-addon">L</div>
+      <input type="text" class="form-control" id="littext" placeholder="Amount" >
+    </div>
+  </div>
+  <input type="button" class="btn btn-primary" value="Search" onclick="galTo();" />
+ 
+  <div class="input-group">
+    <div class="input-group-addon">G</div>
+      <input type="text" class="form-control" id="galtext" placeholder="Converted Cash" disabled >
+	  </div>
+	  </form> 
+	  <p>
+	</p>
+	
+    </div>
+  
+ 
+
+    </div>
+  
+    </div>
+	
+   
+  
+  </div>
+
+ </div>
+	
+  </div>
+</div>
+
+	
+	
+	
+	<!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+	
+	
+<script type="text/javascript">
+		
+
+	
+			function litreTo(amount) {
+	
+					    var amount = $("#littext2").val();  
+						
+						var	dollar2 = Number(amount) * Number(3.7854117849);
+					  
+						$("#galtext2").val(dollar2);
+					}
+	
+	     function galTo(amount) {
+	
+					    var amount = $("#littext").val();  
+						
+						var	dollar2 = Number(amount) * Number(0.26417);
+					  
+						$("#galtext").val(dollar2);
+					}
+	
+	
+			
+			
+			
+			
+			
+</script>
+	
+	
+	
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+ 
+  </body>
+</html>
+
+
+
+</html>
